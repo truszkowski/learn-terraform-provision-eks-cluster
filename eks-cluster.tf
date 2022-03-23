@@ -27,6 +27,14 @@ module "eks" {
       asg_desired_capacity          = 1
     },
   ]
+    
+  map_roles = [
+    {
+      rolearn  = aws_iam_role.deployment.arn
+      username = aws_iam_role.deployment.arn
+      groups   = [local.deployment_k8s_rbac_group]
+    }
+  ]
 }
 
 data "aws_eks_cluster" "cluster" {
