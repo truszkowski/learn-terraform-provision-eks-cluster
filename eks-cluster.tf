@@ -30,8 +30,8 @@ module "eks" {
     
   map_roles = [
     {
-      rolearn  = aws_iam_role.deployment.arn
-      username = aws_iam_role.deployment.arn
+      rolearn  = "arn:aws:iam::470764335307:role/local-admin"
+      username = "arn:aws:iam::470764335307:role/local-admin"
       groups   = [local.deployment_k8s_rbac_group]
     }
   ]
