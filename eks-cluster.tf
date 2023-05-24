@@ -13,6 +13,7 @@ module "eks" {
 
   workers_group_defaults = {
     root_volume_type = "gp2"
+    kubelet_extra_args = "--max-pods=110"
   }
 
   worker_groups = [
