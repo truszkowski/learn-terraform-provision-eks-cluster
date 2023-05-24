@@ -86,13 +86,13 @@ resource "kubernetes_role" "deployer" {
 
   rule {
     api_groups = [""]
-    resources  = ["pods", "secrets", "services", "serviceaccounts"]
+    resources  = ["pods", "secrets", "services", "serviceaccounts", "configmaps"]
     verbs      = ["create", "get", "list", "update", "delete", "patch", "watch"]
   }
 
   rule {
     api_groups = ["apps"]
-    resources  = ["deployments", "statefulsets", "configmaps"]
+    resources  = ["deployments", "statefulsets"]
     verbs      = ["create", "get", "list", "update", "delete", "patch", "watch"]
   }
 
