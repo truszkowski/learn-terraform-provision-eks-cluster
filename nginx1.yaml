@@ -46,3 +46,16 @@ data:
             root /usr/share/nginx/html;
         }
     }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx1-service
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: nginx1
