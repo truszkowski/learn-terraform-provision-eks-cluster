@@ -30,8 +30,8 @@ module "eks" {
     
   map_roles = [
     {
-      rolearn  = "arn:aws:iam::163754997915:role/myAmazonEKSClusterRole"
-      username = "arn:aws:iam::163754997915:role/myAmazonEKSClusterRole"
+      rolearn  = "arn:aws:iam::163754997915:role/spacelift-eks-cluster-preprod"
+      username = "arn:aws:iam::163754997915:role/spacelift-eks-cluster-preprod"
       groups   = [local.deployment_k8s_rbac_group]
     }
   ]
